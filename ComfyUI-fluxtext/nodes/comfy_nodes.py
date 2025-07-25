@@ -140,7 +140,7 @@ def tensor2pil(image):
 class FLUXTextLoad:
     @classmethod
     def INPUT_TYPES(cls):
-        return {"required": {"model_path": ('flux-text/flux-text.safetensors',), }}
+        return {"required": {"model_path":  ("STRING", {"default": "flux-text/flux-text.safetensors", "multiline": True, "label": "lora_path"}), }}
     
     RETURN_TYPES = ("FLUXText_PIPE", "FLUXText_Config")
     FUNCTION = "load_model"

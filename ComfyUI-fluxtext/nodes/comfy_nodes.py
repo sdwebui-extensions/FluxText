@@ -2,21 +2,14 @@ import argparse
 import math
 import os
 import os.path as osp
-import random
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-import cv2
 from diffusers import FluxTransformer2DModel
-import lightning as L
 import numpy as np
 from PIL import Image
 import torch
-import torch.distributed as dist
 import torch.nn.functional as F
-from torch.utils.data import DataLoader, DistributedSampler
-import torchvision.transforms as T
-from tqdm import tqdm
 import yaml
 
 from fluxtext.condition import Condition
@@ -140,13 +133,14 @@ def tensor2pil(image):
 class FLUXTextLoad:
     @classmethod
     def INPUT_TYPES(cls):
-        return {"required": {"model_path":  ("STRING", {"default": "flux-text/flux-text.safetensors", "multiline": True, "label": "lora_path"}), }}
+        return {"required": {"model_path":  (folder_paths.get_filename_list("loras"),), }}
     
     RETURN_TYPES = ("FLUXText_PIPE", "FLUXText_Config")
     FUNCTION = "load_model"
     CATEGORY = "FLUXText"
 
     def load_model(self, model_path):
+        model_path = folder_paths.get_full_path("loras", model_path)
         _dirname = osp.dirname(model_path)
         config_path = osp.join(_dirname, 'config.yaml')
         with open(config_path, "r") as f:
@@ -180,7 +174,7 @@ class FLUXTextLORALoad:
     def INPUT_TYPES(cls):
         return {"required": {
                     "model": ("MODEL", ),
-                    "lora_path": ("STRING", {"default": "flux-text/flux-text.safetensors", "multiline": True, "label": "lora_path"}), 
+                    "lora_path": (folder_paths.get_filename_list("loras"),), 
                     }
                 }
     
@@ -189,6 +183,7 @@ class FLUXTextLORALoad:
     CATEGORY = "FLUXText"
 
     def load_model(self, model, lora_path):
+        lora_path = folder_paths.get_full_path("loras", lora_path)
         _dirname = osp.dirname(lora_path)
         config_path = osp.join(_dirname, 'config.yaml')
         with open(config_path, "r") as f:

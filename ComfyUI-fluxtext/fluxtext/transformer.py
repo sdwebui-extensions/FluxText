@@ -4,7 +4,6 @@ from diffusers.models.transformers.transformer_flux import (
     FluxTransformer2DModel,
     Transformer2DModelOutput,
     USE_PEFT_BACKEND,
-    is_torch_version,
     scale_lora_layers,
     unscale_lora_layers,
     logger,
@@ -146,7 +145,7 @@ def tranformer_forward(
     for index_block, block in enumerate(self.transformer_blocks):
         if self.training and self.gradient_checkpointing:
             ckpt_kwargs: Dict[str, Any] = (
-                {"use_reentrant": False} if is_torch_version(">=", "1.11.0") else {}
+                {"use_reentrant": False}
             )
             if byt5_text_ids is not None:
                 encoder_hidden_states, hidden_states, condition_latents, byt5_embeds = (
@@ -226,7 +225,7 @@ def tranformer_forward(
     for index_block, block in enumerate(self.single_transformer_blocks):
         if self.training and self.gradient_checkpointing:
             ckpt_kwargs: Dict[str, Any] = (
-                {"use_reentrant": False} if is_torch_version(">=", "1.11.0") else {}
+                {"use_reentrant": False}
             )
             result = torch.utils.checkpoint.checkpoint(
                 single_block_forward,

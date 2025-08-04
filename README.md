@@ -11,7 +11,7 @@ FLUX-Text: A Simple and Advanced Diffusion Transformer Baseline for Scene Text E
 > <br>
 > ALibaba Group
 
-<img src='assets/flux-text.png'>
+<img src='assets/demo1.jpg'>
 
 ## 📖 Overview
 * **Motivation:** Scene text editing is a challenging task that aims to modify or add text in images while maintaining the fidelity of newly generated text and visual coherence with the background. The main challenge of this task is that we need to edit multiple line texts with diverse language attributes (e.g., fonts, sizes, and styles), language types (e.g., English, Chinese), and visual scenarios (e.g., poster, advertising, gaming).

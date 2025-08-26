@@ -7,11 +7,11 @@ FLUX-Text: A Simple and Advanced Diffusion Transformer Baseline for Scene Text E
 <a href="https://huggingface.co/GD-ML/FLUX-Text/"><img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace"></a>
 <!-- <a ><img src="https://img.shields.io/badge/🤗_HuggingFace-Model-ffbd45.svg" alt="HuggingFace"></a> -->
 
-> *[Rui Lan](https://scholar.google.com/citations?user=zwVlWXwAAAAJ&hl=zh-CN), [Yancheng Bai](https://scholar.google.com/citations?hl=zh-CN&user=Ilx8WNkAAAAJ&view_op=list_works&sortby=pubdate), [Xu Duan](https://scholar.google.com/citations?hl=zh-CN&user=EEUiFbwAAAAJ), [Mingxing Li](https://scholar.google.com/citations?hl=zh-CN&user=-pfkprkAAAAJ), [Lei Sun](https://allylei.github.io), [Xiangxiang Chu](https://scholar.google.com/citations?hl=zh-CN&user=jn21pUsAAAAJ&view_op=list_works&sortby=pubdate)*
+> *[Rui Lan](https://scholar.google.com/citations?user=zwVlWXwAAAAJ&hl=zh-CN), [Yancheng Bai](https://scholar.google.com/citations?hl=zh-CN&user=Ilx8WNkAAAAJ&view_op=list_works&sortby=pubdate), [Xu Duan](https://scholar.google.com/citations?hl=zh-CN&user=EEUiFbwAAAAJ), [Mingxing Li](https://scholar.google.com/citations?hl=zh-CN&user=-pfkprkAAAAJ), [Dongyang Jin](https://scholar.google.com/citations?user=1xA5KxAAAAAJ&hl=zh-CN), [Ryan Xu](https://scholar.google.com/citations?user=MDrO_twAAAAJ&hl=en&oi=ao), [Lei Sun](https://allylei.github.io), [Xiangxiang Chu](https://scholar.google.com/citations?hl=zh-CN&user=jn21pUsAAAAJ&view_op=list_works&sortby=pubdate)*
 > <br>
 > ALibaba Group
 
-<img src='assets/flux-text.png'>
+<img src='assets/demo1.jpg'>
 
 ## 📖 Overview
 * **Motivation:** Scene text editing is a challenging task that aims to modify or add text in images while maintaining the fidelity of newly generated text and visual coherence with the background. The main challenge of this task is that we need to edit multiple line texts with diverse language attributes (e.g., fonts, sizes, and styles), language types (e.g., English, Chinese), and visual scenarios (e.g., poster, advertising, gaming).
